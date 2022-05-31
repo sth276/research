@@ -27,7 +27,7 @@ And then send the URL to the administrator.
  
 **Step 3**
  
-After an administrator open the URL above, a piece of data that contains the password of the administrator account will be inserted into the piwigo_search table.If we want to retrieve the data, we need to know the id of the data that has been inserted into the piwigo_search table.Because the id is incremental, we can just bruteforce it.
+After an administrator open the URL above, a piece of data that contains the password of the administrator account will be inserted into the piwigo_search table. If we want to retrieve the data, we need to know the id of the data that has been inserted into the piwigo_search table. Because the id is incremental, we can just bruteforce it.
 
 
 Then we request `http://172.20.10.8/index.php?/search/${id}` to  retrieve the password of the administrator.
